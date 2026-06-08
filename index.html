@@ -340,6 +340,31 @@ border-radius:100px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
   .sp-c,.sp-grid>.sp-c:first-child,.sp-grid>.sp-c:nth-child(2):not(:last-child),.sp-grid>.sp-c:last-child:not(:first-child):not(:nth-child(2)){--sp-rot:0deg;--sp-base-y:0px}
 }
 
+/* THE PIECES */
+#sec-pieces{position:relative;background:radial-gradient(ellipse 90% 80% at 50% 50%,var(--bg3) 0%,var(--bg) 70%);padding:96px 24px;overflow:hidden}
+#sec-pieces::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle, rgba(212,168,75,.05) 1px, transparent 1.4px);background-size:28px 28px}
+.pieces-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.pieces-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
+@media(max-width:760px){.pieces-grid{grid-template-columns:1fr}}
+.piece-card{border:1px solid rgba(212,168,75,.2);border-top:2px solid rgba(212,168,75,.45);border-radius:20px;overflow:hidden;
+  background:linear-gradient(145deg,rgba(212,168,75,.06),rgba(212,168,75,.02));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 24px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .45s var(--ease),box-shadow .4s var(--ease),border-color .35s}
+.piece-card:hover{transform:translateY(-7px);border-color:rgba(212,168,75,.45);box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.piece-img{aspect-ratio:4/3;background:radial-gradient(ellipse 70% 70% at 50% 42%,#f9f6f0 0%,#efe8db 70%,#e6ddcd 100%);
+  display:flex;align-items:center;justify-content:center;padding:22px}
+.piece-img img{max-width:88%;max-height:100%;object-fit:contain;filter:drop-shadow(0 20px 30px rgba(60,45,25,.18))}
+.piece-body{padding:26px 30px 30px}
+.piece-eyebrow{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.piece-name{font-family:'Playfair Display',serif;font-size:25px;font-weight:500;margin-bottom:12px;line-height:1.1}
+.piece-desc{font-size:13px;line-height:1.75;color:var(--muted)}
+.piece-tag{display:inline-block;margin-top:18px;padding:5px 14px;border:1px solid rgba(212,168,75,.3);border-radius:100px;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.pieces-note{margin-top:38px;text-align:center;font-size:11.5px;letter-spacing:.04em;color:rgba(242,237,228,.5);font-style:italic;
+  max-width:620px;margin-left:auto;margin-right:auto;line-height:1.7}
+
 /* KANALEN */
 #sec-profil{position:relative;background:radial-gradient(ellipse 90% 80% at 50% 50%,var(--bg3) 0%,var(--bg) 70%);padding:120px 24px;overflow:hidden}
 .p-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
@@ -1184,6 +1209,37 @@ position:relative;overflow:hidden;transition:color .35s}
 
 <div class="gd"></div>
 
+<!-- THE PIECES -->
+<section id="sec-pieces">
+  <div class="pieces-inner">
+    <p class="sec-lbl rv">The pieces</p>
+    <h2 class="sec-h2 rv">The pieces <em>this room is built around.</em></h2>
+    <div class="pieces-grid">
+      <div class="piece-card rv d1">
+        <div class="piece-img"><img src="products/marble-art.jpg" alt="Marble Art pendant in golden marble" loading="lazy"></div>
+        <div class="piece-body">
+          <p class="piece-eyebrow">Pendant</p>
+          <h3 class="piece-name">Marble Art</h3>
+          <p class="piece-desc">A sculpted pendant in golden marble on a slim brass stem &mdash; a quiet centrepiece that carries the light above the room.</p>
+          <span class="piece-tag">Golden marble &middot; Brass</span>
+        </div>
+      </div>
+      <div class="piece-card rv d2">
+        <div class="piece-img"><img src="products/trip.jpg" alt="Trip portable lamp in Dark Emperador marble" loading="lazy"></div>
+        <div class="piece-body">
+          <p class="piece-eyebrow">Portable lamp</p>
+          <h3 class="piece-name">Trip</h3>
+          <p class="piece-desc">A portable, rechargeable lamp in Dark Emperador marble and mouth-blown glass &mdash; warm, movable light that finishes the space.</p>
+          <span class="piece-tag">Dark Emperador &middot; Rechargeable</span>
+        </div>
+      </div>
+    </div>
+    <p class="pieces-note rv">Two Marble Art pendants and two Trip lamps &mdash; the pieces I've chosen to build the room around.</p>
+  </div>
+</section>
+
+<div class="gd"></div>
+
 <!-- KANALEN -->
 <section id="sec-profil">
   <div class="p-orb p-orb-1" aria-hidden="true"></div>
@@ -1230,7 +1286,7 @@ position:relative;overflow:hidden;transition:color .35s}
     <div class="price-grid">
 
       <!-- Single Film -->
-      <div class="pkg-col rv d1" data-pkg-col="start">
+      <div class="pkg-col featured rv d1" data-pkg-col="start">
         <div class="pkg-boost" role="group" aria-pressed="false" data-pkg="start">
           <button type="button" class="pkg-boost-head" aria-pressed="false" aria-controls="pkg-boost-body-start" aria-label="Add Meta reach to the Single Film">
             <span class="pkg-boost-switch" aria-hidden="true"></span>
@@ -1256,7 +1312,8 @@ position:relative;overflow:hidden;transition:color .35s}
             </div>
           </div>
         </div>
-        <div class="price-box rv" data-pkg-box="start">
+        <div class="price-box featured rv" data-pkg-box="start">
+          <span class="price-ribbon">Recommended &middot; START HERE</span>
           <h3 class="price-title">Single Film</h3>
           <p class="price-sub">The transformation in 1 film &middot; 2 stories with CTA &middot; 10 lifestyle images</p>
           <p class="price-total-lbl">Price</p>
@@ -1273,7 +1330,7 @@ position:relative;overflow:hidden;transition:color .35s}
       </div>
 
       <!-- The Series (featured) -->
-      <div class="pkg-col featured rv d2" data-pkg-col="season">
+      <div class="pkg-col rv d2" data-pkg-col="season">
         <div class="pkg-boost" role="group" aria-pressed="false" data-pkg="season">
           <button type="button" class="pkg-boost-head" aria-pressed="false" aria-controls="pkg-boost-body-season" aria-label="Add Meta reach to The Series">
             <span class="pkg-boost-switch" aria-hidden="true"></span>
@@ -1299,8 +1356,8 @@ position:relative;overflow:hidden;transition:color .35s}
             </div>
           </div>
         </div>
-        <div class="price-box featured rv" data-pkg-box="season">
-          <span class="price-ribbon">Recommended &middot; THE FULL STORY</span>
+        <div class="price-box rv" data-pkg-box="season">
+          <span class="price-ribbon ribbon-muted">The full story</span>
           <h3 class="price-title">The Series</h3>
           <p class="price-sub">3 films &middot; 6 stories with CTA &middot; 30 lifestyle images</p>
           <p class="price-total-lbl">Price</p>
@@ -1587,6 +1644,7 @@ if(spotSec){
       scrollTo:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY-90):document.getElementById('sec-spar').getBoundingClientRect().top+window.scrollY-30,
       trackStart:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY):document.getElementById('sec-spar').getBoundingClientRect().top+window.scrollY
     },
+    {id:'sec-pieces',label:'The pieces'},
     {id:'sec-profil',label:'The channel'},
     {id:'sec-pr',label:'Investment'},
     {id:'sec-cta',label:'Contact'}
