@@ -345,17 +345,17 @@ border-radius:100px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
 #sec-pieces::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
   background-image:radial-gradient(circle, rgba(212,168,75,.05) 1px, transparent 1.4px);background-size:28px 28px}
 .pieces-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto}
-.pieces-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
-@media(max-width:760px){.pieces-grid{grid-template-columns:1fr}}
+.pieces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+@media(max-width:820px){.pieces-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
 .piece-card{border:1px solid rgba(212,168,75,.2);border-top:2px solid rgba(212,168,75,.45);border-radius:20px;overflow:hidden;
   background:linear-gradient(145deg,rgba(212,168,75,.06),rgba(212,168,75,.02));
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   box-shadow:0 24px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
   transition:transform .45s var(--ease),box-shadow .4s var(--ease),border-color .35s}
 .piece-card:hover{transform:translateY(-7px);border-color:rgba(212,168,75,.45);box-shadow:0 40px 90px rgba(0,0,0,.55)}
-.piece-img{aspect-ratio:4/3;background:radial-gradient(ellipse 70% 70% at 50% 42%,#f9f6f0 0%,#efe8db 70%,#e6ddcd 100%);
-  display:flex;align-items:center;justify-content:center;padding:22px}
-.piece-img img{max-width:88%;max-height:100%;object-fit:contain;filter:drop-shadow(0 20px 30px rgba(60,45,25,.18))}
+.piece-img{aspect-ratio:1/1;background:radial-gradient(ellipse 70% 70% at 50% 42%,#f9f6f0 0%,#efe8db 70%,#e6ddcd 100%);
+  display:flex;align-items:center;justify-content:center;padding:20px}
+.piece-img img{max-width:90%;max-height:94%;object-fit:contain;filter:drop-shadow(0 20px 30px rgba(60,45,25,.18))}
 .piece-body{padding:26px 30px 30px}
 .piece-eyebrow{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
 .piece-name{font-family:'Playfair Display',serif;font-size:25px;font-weight:500;margin-bottom:12px;line-height:1.1}
@@ -1233,8 +1233,17 @@ position:relative;overflow:hidden;transition:color .35s}
           <span class="piece-tag">Dark Emperador &middot; Rechargeable</span>
         </div>
       </div>
+      <div class="piece-card rv d3">
+        <div class="piece-img"><img src="products/gu10-bulb.jpg" alt="Mini Spot Bulb, 5 W GU10 LED" loading="lazy"></div>
+        <div class="piece-body">
+          <p class="piece-eyebrow">Light source</p>
+          <h3 class="piece-name">Mini Spot Bulb</h3>
+          <p class="piece-desc">A warm, dimmable 5&nbsp;W LED in a GU10 fitting &mdash; the small light source the pieces are lit with.</p>
+          <span class="piece-tag">5&nbsp;W &middot; GU10 &middot; LED</span>
+        </div>
+      </div>
     </div>
-    <p class="pieces-note rv">Two Marble Art pendants and two Trip lamps &mdash; the pieces I've chosen to build the room around.</p>
+    <p class="pieces-note rv">Two Marble Art pendants, two Trip lamps and a Mini Spot Bulb &mdash; the Design By Us pieces I've chosen to build the room around.</p>
   </div>
 </section>
 
